@@ -92,6 +92,36 @@ namespace FileParser
             {
                 MessageBox.Show("Error: " + Excp.Message);
             }
+            if (textBox2.Text != "")
+                {
+
+            
+            string file2_data;
+            file2_data = "";
+            try
+            {
+                StreamReader sr2 = new StreamReader(textBox2.Text);
+                file2_data = sr2.ReadToEnd();
+                file2_data = file2_data.Replace("\r\n", "").Trim();
+                file2_data = file2_data.Replace("~", "~\r\n");
+                sr2.Close();
+            }
+            catch (Exception Excp)
+            {
+                MessageBox.Show("Error: " + Excp.Message);
+            }
+            try
+            {
+                StreamWriter sw2 = new StreamWriter(textBox2.Text + ".parse");
+                sw2.WriteLine(file1_data);
+                sw2.Close();
+            }
+            catch (Exception Excp)
+            {
+                MessageBox.Show("Error: " + Excp.Message);
+            }
         }
+        }
+    }
     }
 }
