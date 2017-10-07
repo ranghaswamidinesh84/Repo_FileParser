@@ -1,6 +1,6 @@
 ﻿namespace FileParser
 {
-    partial class Form1
+    partial class form_fileparser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,186 +28,210 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Parse_button = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label_file1 = new System.Windows.Forms.Label();
+            this.button_file1_browse = new System.Windows.Forms.Button();
+            this.textbox_file1 = new System.Windows.Forms.TextBox();
+            this.button_parse = new System.Windows.Forms.Button();
+            this.button_extract = new System.Windows.Forms.Button();
+            this.button_quit = new System.Windows.Forms.Button();
+            this.label_medicaid_id_segment = new System.Windows.Forms.Label();
+            this.combobox_medicaid_id_selector = new System.Windows.Forms.ComboBox();
+            this.textbox_file2 = new System.Windows.Forms.TextBox();
+            this.button_file2_browse = new System.Windows.Forms.Button();
+            this.label_file2 = new System.Windows.Forms.Label();
+            this.textbox_file3 = new System.Windows.Forms.TextBox();
+            this.button_file3_browse = new System.Windows.Forms.Button();
+            this.label_file3 = new System.Windows.Forms.Label();
+            this.label_status = new System.Windows.Forms.Label();
+            this.textbox_status = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // label_file1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Select  File1:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label_file1.AutoSize = true;
+            this.label_file1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_file1.Location = new System.Drawing.Point(18, 43);
+            this.label_file1.Name = "label_file1";
+            this.label_file1.Size = new System.Drawing.Size(139, 25);
+            this.label_file1.TabIndex = 0;
+            this.label_file1.Text = "Select  File1:";
+            this.label_file1.Click += new System.EventHandler(this.label_file1_Click);
             // 
-            // button1
+            // button_file1_browse
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(389, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 45);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_file1_browse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_file1_browse.Location = new System.Drawing.Point(389, 33);
+            this.button_file1_browse.Name = "button_file1_browse";
+            this.button_file1_browse.Size = new System.Drawing.Size(118, 45);
+            this.button_file1_browse.TabIndex = 1;
+            this.button_file1_browse.Text = "Browse";
+            this.button_file1_browse.UseVisualStyleBackColor = true;
+            this.button_file1_browse.Click += new System.EventHandler(this.button_file1_browse_Click);
             // 
-            // textBox1
+            // textbox_file1
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(185, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 26);
-            this.textBox1.TabIndex = 2;
+            this.textbox_file1.Enabled = false;
+            this.textbox_file1.Location = new System.Drawing.Point(185, 44);
+            this.textbox_file1.Name = "textbox_file1";
+            this.textbox_file1.Size = new System.Drawing.Size(176, 26);
+            this.textbox_file1.TabIndex = 2;
             // 
-            // Parse_button
+            // button_parse
             // 
-            this.Parse_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Parse_button.Location = new System.Drawing.Point(24, 289);
-            this.Parse_button.Name = "Parse_button";
-            this.Parse_button.Size = new System.Drawing.Size(133, 45);
-            this.Parse_button.TabIndex = 3;
-            this.Parse_button.Text = "Parse";
-            this.Parse_button.UseVisualStyleBackColor = true;
-            this.Parse_button.Click += new System.EventHandler(this.button2_Click);
+            this.button_parse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_parse.Location = new System.Drawing.Point(24, 289);
+            this.button_parse.Name = "button_parse";
+            this.button_parse.Size = new System.Drawing.Size(133, 45);
+            this.button_parse.TabIndex = 3;
+            this.button_parse.Text = "Parse";
+            this.button_parse.UseVisualStyleBackColor = true;
+            this.button_parse.Click += new System.EventHandler(this.button_parse_Click);
             // 
-            // button3
+            // button_extract
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(199, 289);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 45);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Extract";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_extract.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_extract.Location = new System.Drawing.Point(199, 289);
+            this.button_extract.Name = "button_extract";
+            this.button_extract.Size = new System.Drawing.Size(133, 45);
+            this.button_extract.TabIndex = 4;
+            this.button_extract.Text = "Extract";
+            this.button_extract.UseVisualStyleBackColor = true;
+            this.button_extract.Click += new System.EventHandler(this.button_extract_Click);
             // 
-            // button4
+            // button_quit
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(374, 289);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(133, 45);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Quit";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button_quit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_quit.Location = new System.Drawing.Point(374, 289);
+            this.button_quit.Name = "button_quit";
+            this.button_quit.Size = new System.Drawing.Size(133, 45);
+            this.button_quit.TabIndex = 5;
+            this.button_quit.Text = "Quit";
+            this.button_quit.UseVisualStyleBackColor = true;
+            this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
             // 
-            // label2
+            // label_medicaid_id_segment
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 227);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 25);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Medicaid ID Segment:";
+            this.label_medicaid_id_segment.AutoSize = true;
+            this.label_medicaid_id_segment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_medicaid_id_segment.Location = new System.Drawing.Point(19, 227);
+            this.label_medicaid_id_segment.Name = "label_medicaid_id_segment";
+            this.label_medicaid_id_segment.Size = new System.Drawing.Size(225, 25);
+            this.label_medicaid_id_segment.TabIndex = 6;
+            this.label_medicaid_id_segment.Text = "Medicaid ID Segment:";
             // 
-            // comboBox1
+            // combobox_medicaid_id_selector
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.combobox_medicaid_id_selector.FormattingEnabled = true;
+            this.combobox_medicaid_id_selector.Items.AddRange(new object[] {
             "REF*0F*",
             "REF{0F{",
             "REF*ABB*"});
-            this.comboBox1.Location = new System.Drawing.Point(264, 224);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(243, 28);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.combobox_medicaid_id_selector.Location = new System.Drawing.Point(264, 224);
+            this.combobox_medicaid_id_selector.Name = "combobox_medicaid_id_selector";
+            this.combobox_medicaid_id_selector.Size = new System.Drawing.Size(243, 28);
+            this.combobox_medicaid_id_selector.TabIndex = 8;
+            this.combobox_medicaid_id_selector.SelectedIndexChanged += new System.EventHandler(this.combobox_medicaid_id_selector_SelectedIndexChanged);
             // 
-            // textBox2
+            // textbox_file2
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(185, 107);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 26);
-            this.textBox2.TabIndex = 11;
+            this.textbox_file2.Enabled = false;
+            this.textbox_file2.Location = new System.Drawing.Point(185, 107);
+            this.textbox_file2.Name = "textbox_file2";
+            this.textbox_file2.Size = new System.Drawing.Size(176, 26);
+            this.textbox_file2.TabIndex = 11;
             // 
-            // button5
+            // button_file2_browse
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(389, 96);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(118, 45);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Browse";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button_file2_browse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_file2_browse.Location = new System.Drawing.Point(389, 96);
+            this.button_file2_browse.Name = "button_file2_browse";
+            this.button_file2_browse.Size = new System.Drawing.Size(118, 45);
+            this.button_file2_browse.TabIndex = 10;
+            this.button_file2_browse.Text = "Browse";
+            this.button_file2_browse.UseVisualStyleBackColor = true;
+            this.button_file2_browse.Click += new System.EventHandler(this.button_file2_browse_Click);
             // 
-            // label3
+            // label_file2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 25);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Select  File2:";
+            this.label_file2.AutoSize = true;
+            this.label_file2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_file2.Location = new System.Drawing.Point(18, 106);
+            this.label_file2.Name = "label_file2";
+            this.label_file2.Size = new System.Drawing.Size(139, 25);
+            this.label_file2.TabIndex = 9;
+            this.label_file2.Text = "Select  File2:";
             // 
-            // textBox3
+            // textbox_file3
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(185, 170);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(176, 26);
-            this.textBox3.TabIndex = 14;
+            this.textbox_file3.Enabled = false;
+            this.textbox_file3.Location = new System.Drawing.Point(185, 170);
+            this.textbox_file3.Name = "textbox_file3";
+            this.textbox_file3.Size = new System.Drawing.Size(176, 26);
+            this.textbox_file3.TabIndex = 14;
             // 
-            // button6
+            // button_file3_browse
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(389, 159);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(118, 45);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "Browse";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button_file3_browse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_file3_browse.Location = new System.Drawing.Point(389, 159);
+            this.button_file3_browse.Name = "button_file3_browse";
+            this.button_file3_browse.Size = new System.Drawing.Size(118, 45);
+            this.button_file3_browse.TabIndex = 13;
+            this.button_file3_browse.Text = "Browse";
+            this.button_file3_browse.UseVisualStyleBackColor = true;
+            this.button_file3_browse.Click += new System.EventHandler(this.button_file3_browse_Click);
             // 
-            // label4
+            // label_file3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 169);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 25);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Select  File3:";
+            this.label_file3.AutoSize = true;
+            this.label_file3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_file3.Location = new System.Drawing.Point(18, 169);
+            this.label_file3.Name = "label_file3";
+            this.label_file3.Size = new System.Drawing.Size(139, 25);
+            this.label_file3.TabIndex = 12;
+            this.label_file3.Text = "Select  File3:";
             // 
-            // Form1
+            // label_status
+            // 
+            this.label_status.AutoSize = true;
+            this.label_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_status.Location = new System.Drawing.Point(19, 373);
+            this.label_status.Name = "label_status";
+            this.label_status.Size = new System.Drawing.Size(81, 25);
+            this.label_status.TabIndex = 15;
+            this.label_status.Text = "Status:";
+            // 
+            // textbox_status
+            // 
+            this.textbox_status.Enabled = false;
+            this.textbox_status.Location = new System.Drawing.Point(106, 374);
+            this.textbox_status.Name = "textbox_status";
+            this.textbox_status.Size = new System.Drawing.Size(401, 26);
+            this.textbox_status.TabIndex = 16;
+            this.textbox_status.Text = "Utility Initialized";
+            // 
+            // form_fileparser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 363);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.Parse_button);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(528, 446);
+            this.Controls.Add(this.textbox_status);
+            this.Controls.Add(this.label_status);
+            this.Controls.Add(this.textbox_file3);
+            this.Controls.Add(this.button_file3_browse);
+            this.Controls.Add(this.label_file3);
+            this.Controls.Add(this.textbox_file2);
+            this.Controls.Add(this.button_file2_browse);
+            this.Controls.Add(this.label_file2);
+            this.Controls.Add(this.combobox_medicaid_id_selector);
+            this.Controls.Add(this.label_medicaid_id_segment);
+            this.Controls.Add(this.button_quit);
+            this.Controls.Add(this.button_extract);
+            this.Controls.Add(this.button_parse);
+            this.Controls.Add(this.textbox_file1);
+            this.Controls.Add(this.button_file1_browse);
+            this.Controls.Add(this.label_file1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.Name = "form_fileparser";
             this.Text = "Utility";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,20 +240,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button Parse_button;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label_file1;
+        private System.Windows.Forms.Button button_file1_browse;
+        private System.Windows.Forms.TextBox textbox_file1;
+        private System.Windows.Forms.Button button_parse;
+        private System.Windows.Forms.Button button_extract;
+        private System.Windows.Forms.Button button_quit;
+        private System.Windows.Forms.Label label_medicaid_id_segment;
+        private System.Windows.Forms.ComboBox combobox_medicaid_id_selector;
+        private System.Windows.Forms.TextBox textbox_file2;
+        private System.Windows.Forms.Button button_file2_browse;
+        private System.Windows.Forms.Label label_file2;
+        private System.Windows.Forms.TextBox textbox_file3;
+        private System.Windows.Forms.Button button_file3_browse;
+        private System.Windows.Forms.Label label_file3;
+        private System.Windows.Forms.Label label_status;
+        private System.Windows.Forms.TextBox textbox_status;
     }
 }
 

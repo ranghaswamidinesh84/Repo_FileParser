@@ -11,84 +11,85 @@ using System.IO;
 
 namespace FileParser
 {
-    public partial class Form1 : Form
+    public partial class form_fileparser : Form
     {
-        public Form1()
+        public form_fileparser()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label_file1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button_quit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void combobox_medicaid_id_selector_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string path;
-            OpenFileDialog file = new OpenFileDialog();
-            if (file.ShowDialog() == DialogResult.OK)
-            {
-                path = file.FileName;
-                textBox1.Text = path;
-            }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void button_file1_browse_Click(object sender, EventArgs e)
         {
             string path;
             OpenFileDialog file = new OpenFileDialog();
             if (file.ShowDialog() == DialogResult.OK)
             {
                 path = file.FileName;
-                textBox2.Text = path;
+                textbox_file1.Text = path;
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button_file2_browse_Click(object sender, EventArgs e)
         {
             string path;
             OpenFileDialog file = new OpenFileDialog();
             if (file.ShowDialog() == DialogResult.OK)
             {
                 path = file.FileName;
-                textBox3.Text = path;
+                textbox_file2.Text = path;
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button_file3_browse_Click(object sender, EventArgs e)
+        {
+            string path;
+            OpenFileDialog file = new OpenFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                path = file.FileName;
+                textbox_file3.Text = path;
+            }
+        }
+
+        private void button_parse_Click(object sender, EventArgs e)
         {
             try
             {
-                if (File.Exists(textBox1.Text +".parse"))
+                if (File.Exists(textbox_file1.Text +".parse"))
                 {
-                    File.Delete(textBox1.Text + ".parse");
+                    File.Delete(textbox_file1.Text + ".parse");
                 }
 
-                if (File.Exists(textBox2.Text + ".parse"))
+                if (File.Exists(textbox_file2.Text + ".parse"))
                 {
-                    File.Delete(textBox2.Text + ".parse");
+                    File.Delete(textbox_file2.Text + ".parse");
                 }
 
-                if (File.Exists(textBox3.Text + ".parse"))
+                if (File.Exists(textbox_file3.Text + ".parse"))
                 {
-                    File.Delete(textBox3.Text + ".parse");
+                    File.Delete(textbox_file3.Text + ".parse");
                 }
             }
 
             catch (Exception Excp)
             {
                 MessageBox.Show("Error: " + Excp.Message);
+                textbox_status.Text = "Older Files deletion Failed";
             }
 
             string file1_data;
@@ -96,38 +97,42 @@ namespace FileParser
 
             try
             {
-                StreamReader sr1 = new StreamReader(textBox1.Text);
+                StreamReader sr1 = new StreamReader(textbox_file1.Text);
                 file1_data = sr1.ReadToEnd();
                 file1_data = file1_data.Replace("\r\n", "").Trim();
                 file1_data = file1_data.Replace("~", "~\r\n");
                 sr1.Close();
+                textbox_status.Text = "File1 Parsing Completed Successfully";
             }
 
             catch (Exception Excp)
             {
                 MessageBox.Show("Error: " + Excp.Message);
+                textbox_status.Text = "File1 Parsing Failed";
             }
 
             try
             {
-                StreamWriter sw1 = new StreamWriter(textBox1.Text + ".parse");
+                StreamWriter sw1 = new StreamWriter(textbox_file1.Text + ".parse");
                 sw1.WriteLine(file1_data);
                 sw1.Close();
+                textbox_status.Text = "Parsed File1 Saved in the current path";
             }
 
             catch (Exception Excp)
             {
                 MessageBox.Show("Error: " + Excp.Message);
+                textbox_status.Text = "Parsed File1 couldn't be saved to current path";
             }
 
-            if (textBox2.Text != "")
+            if (textbox_file2.Text != "")
             {
                 string file2_data;
                 file2_data = "";
 
                 try
                 {
-                    StreamReader sr2 = new StreamReader(textBox2.Text);
+                    StreamReader sr2 = new StreamReader(textbox_file2.Text);
                     file2_data = sr2.ReadToEnd();
                     file2_data = file2_data.Replace("\r\n", "").Trim();
                     file2_data = file2_data.Replace("~", "~\r\n");
@@ -141,7 +146,7 @@ namespace FileParser
 
                 try
                 {
-                    StreamWriter sw2 = new StreamWriter(textBox2.Text + ".parse");
+                    StreamWriter sw2 = new StreamWriter(textbox_file2.Text + ".parse");
                     sw2.WriteLine(file1_data);
                     sw2.Close();
                 }
@@ -149,9 +154,15 @@ namespace FileParser
                 catch (Exception Excp)
                 {
                     MessageBox.Show("Error: " + Excp.Message);
-                    }
+
                 }
             }
+        }
+
+        private void button_extract_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
