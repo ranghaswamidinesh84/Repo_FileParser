@@ -92,6 +92,14 @@ namespace FileParser
                 textbox_status.Text = "Older Files deletion Failed";
             }
 
+            if (textbox_file1.Text == "")
+            {
+                MessageBox.Show("Error: At Least One file should be selected");
+            }
+            else
+            {
+
+            }
             string file1_data;
             file1_data = "";
 
@@ -137,6 +145,7 @@ namespace FileParser
                     file2_data = file2_data.Replace("\r\n", "").Trim();
                     file2_data = file2_data.Replace("~", "~\r\n");
                     sr2.Close();
+                    textbox_status.Text = "File2 Parsing Completed Successfully";
                 }
 
                 catch (Exception Excp)
@@ -149,6 +158,40 @@ namespace FileParser
                     StreamWriter sw2 = new StreamWriter(textbox_file2.Text + ".parse");
                     sw2.WriteLine(file1_data);
                     sw2.Close();
+                }
+
+                catch (Exception Excp)
+                {
+                    MessageBox.Show("Error: " + Excp.Message);
+
+                }
+            }
+
+            if (textbox_file3.Text != "")
+            {
+                string file3_data;
+                file3_data = "";
+
+                try
+                {
+                    StreamReader sr3 = new StreamReader(textbox_file3.Text);
+                    file3_data = sr3.ReadToEnd();
+                    file3_data = file3_data.Replace("\r\n", "").Trim();
+                    file3_data = file3_data.Replace("~", "~\r\n");
+                    sr3.Close();
+                    textbox_status.Text = "File3 Parsing Completed Successfully";
+                }
+
+                catch (Exception Excp)
+                {
+                    MessageBox.Show("Error: " + Excp.Message);
+                }
+
+                try
+                {
+                    StreamWriter sw3 = new StreamWriter(textbox_file3.Text + ".parse");
+                    sw3.WriteLine(file1_data);
+                    sw3.Close();
                 }
 
                 catch (Exception Excp)
