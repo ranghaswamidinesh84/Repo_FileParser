@@ -211,7 +211,32 @@ namespace FileParser
 
         private void button_extract_Click(object sender, EventArgs e)
         {
+            string selecteditem = combobox_medicaid_id_selector.GetItemText(combobox_medicaid_id_selector.SelectedItem);
+            if (selecteditem == "")
+            {
+                MessageBox.Show("Medicaid ID Segment Not selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string parse_file1_data;
+                parse_file1_data = "";
 
+                try
+                {
+                    StreamReader psr1 = new StreamReader(textbox_file3.Text + ".parse");
+                    parse_file1_data = psr1.ReadToEnd();
+                    parse_file1_data = parse_file1_data.Replace("\r\n", "").Trim();
+                    parse_file1_data = parse_file1_data.Replace("~", "~\r\n");
+                    psr1.Close();
+                    textbox_status.Text = "File1 Parsing Completed Successfully";
+                }
+
+                catch (Exception Excp)
+                {
+                    MessageBox.Show("Error: " + Excp.Message);
+                    textbox_status.Text = "File3 Parsing Failed";
+                }
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
