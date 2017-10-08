@@ -44,6 +44,8 @@
             this.label_file3 = new System.Windows.Forms.Label();
             this.label_status = new System.Windows.Forms.Label();
             this.textbox_status = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label_file1
@@ -196,24 +198,46 @@
             this.label_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_status.Location = new System.Drawing.Point(19, 373);
             this.label_status.Name = "label_status";
-            this.label_status.Size = new System.Drawing.Size(81, 25);
+            this.label_status.Size = new System.Drawing.Size(150, 25);
             this.label_status.TabIndex = 15;
-            this.label_status.Text = "Status:";
+            this.label_status.Text = "Parser Status:";
             // 
             // textbox_status
             // 
             this.textbox_status.Enabled = false;
-            this.textbox_status.Location = new System.Drawing.Point(106, 374);
+            this.textbox_status.Location = new System.Drawing.Point(199, 374);
             this.textbox_status.Name = "textbox_status";
-            this.textbox_status.Size = new System.Drawing.Size(401, 26);
+            this.textbox_status.Size = new System.Drawing.Size(308, 26);
             this.textbox_status.TabIndex = 16;
             this.textbox_status.Text = "Utility Initialized";
+            this.textbox_status.TextChanged += new System.EventHandler(this.textbox_status_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 424);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Extractor Status:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(199, 423);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(308, 26);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.Text = "Utility Initialized";
             // 
             // form_fileparser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 446);
+            this.ClientSize = new System.Drawing.Size(528, 470);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textbox_status);
             this.Controls.Add(this.label_status);
             this.Controls.Add(this.textbox_file3);
@@ -256,6 +280,8 @@
         private System.Windows.Forms.Label label_file3;
         private System.Windows.Forms.Label label_status;
         private System.Windows.Forms.TextBox textbox_status;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
