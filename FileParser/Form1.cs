@@ -89,7 +89,7 @@ namespace FileParser
             catch (Exception Excp)
             {
                 MessageBox.Show("Error: " + Excp.Message);
-                textbox_status.Text = "Older Files deletion Failed";
+                textbox_parser_status.Text = "Older Files deletion Failed";
             }
 
             if (textbox_file1.Text == "" && textbox_file2.Text == "" && textbox_file3.Text == "" )
@@ -110,13 +110,13 @@ namespace FileParser
                         file1_data = file1_data.Replace("\r\n", "").Trim();
                         file1_data = file1_data.Replace("~", "~\r\n");
                         sr1.Close();
-                        textbox_status.Text = "File1 Parsing Completed Successfully";
+                        textbox_parser_status.Text = "File1 Parsing Completed Successfully";
                     }
 
                     catch (Exception Excp)
                     {
                         MessageBox.Show("Error: " + Excp.Message);
-                        textbox_status.Text = "File1 Parsing Failed";
+                        textbox_parser_status.Text = "File1 Parsing Failed";
                     }
 
                     try
@@ -124,13 +124,13 @@ namespace FileParser
                         StreamWriter sw1 = new StreamWriter(textbox_file1.Text + ".parse");
                         sw1.WriteLine(file1_data);
                         sw1.Close();
-                        textbox_status.Text = "Parsed File1 Saved in the current path";
+                        textbox_parser_status.Text = "Parsed File1 Saved in the current path";
                     }
 
                     catch (Exception Excp)
                     {
                         MessageBox.Show("Error: " + Excp.Message);
-                        textbox_status.Text = "Parsed File1 couldn't be saved to current path";
+                        textbox_parser_status.Text = "Parsed File1 couldn't be saved to current path";
                     }
                 }
 
@@ -146,13 +146,13 @@ namespace FileParser
                         file2_data = file2_data.Replace("\r\n", "").Trim();
                         file2_data = file2_data.Replace("~", "~\r\n");
                         sr2.Close();
-                        textbox_status.Text = "File2 Parsing Completed Successfully";
+                        textbox_parser_status.Text = "File2 Parsing Completed Successfully";
                     }
 
                     catch (Exception Excp)
                     {
                         MessageBox.Show("Error: " + Excp.Message);
-                        textbox_status.Text = "File2 Parsing Failed";
+                        textbox_parser_status.Text = "File2 Parsing Failed";
                     }
 
                     try
@@ -160,13 +160,13 @@ namespace FileParser
                         StreamWriter sw2 = new StreamWriter(textbox_file2.Text + ".parse");
                         sw2.WriteLine(file2_data);
                         sw2.Close();
-                        textbox_status.Text = "Parsed File2 Saved in the current path";
+                        textbox_parser_status.Text = "Parsed File2 Saved in the current path";
                     }
 
                     catch (Exception Excp)
                     {
                         MessageBox.Show("Error: " + Excp.Message);
-                        textbox_status.Text = "Parsed File2 couldn't be saved to current path";
+                        textbox_parser_status.Text = "Parsed File2 couldn't be saved to current path";
                     }
                 }
 
@@ -182,13 +182,13 @@ namespace FileParser
                         file3_data = file3_data.Replace("\r\n", "").Trim();
                         file3_data = file3_data.Replace("~", "~\r\n");
                         sr3.Close();
-                        textbox_status.Text = "File3 Parsing Completed Successfully";
+                        textbox_parser_status.Text = "File3 Parsing Completed Successfully";
                     }
 
                     catch (Exception Excp)
                     {
                         MessageBox.Show("Error: " + Excp.Message);
-                        textbox_status.Text = "File3 Parsing Failed";
+                        textbox_parser_status.Text = "File3 Parsing Failed";
                     }
 
                     try
@@ -196,13 +196,13 @@ namespace FileParser
                         StreamWriter sw3 = new StreamWriter(textbox_file3.Text + ".parse");
                         sw3.WriteLine(file3_data);
                         sw3.Close();
-                        textbox_status.Text = "Parsed File3 Saved in the current path";
+                        textbox_parser_status.Text = "Parsed File3 Saved in the current path";
                     }
 
                     catch (Exception Excp)
                     {
                         MessageBox.Show("Error: " + Excp.Message);
-                        textbox_status.Text = "Parsed File3 couldn't be saved to current path";
+                        textbox_parser_status.Text = "Parsed File3 couldn't be saved to current path";
                     }
 
                 }
@@ -212,29 +212,104 @@ namespace FileParser
         private void button_extract_Click(object sender, EventArgs e)
         {
             string selecteditem = combobox_medicaid_id_selector.GetItemText(combobox_medicaid_id_selector.SelectedItem);
+
             if (selecteditem == "")
             {
                 MessageBox.Show("Medicaid ID Segment Not selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string parse_file1_data;
-                parse_file1_data = "";
-
-                try
+                if (textbox_file1.Text != "")
                 {
-                    StreamReader psr1 = new StreamReader(textbox_file3.Text + ".parse");
-                    parse_file1_data = psr1.ReadToEnd();
-                    parse_file1_data = parse_file1_data.Replace("\r\n", "").Trim();
-                    parse_file1_data = parse_file1_data.Replace("~", "~\r\n");
-                    psr1.Close();
-                    textbox_status.Text = "File1 Parsing Completed Successfully";
-                }
+                    string parse_file1_data;
+                    parse_file1_data = "";
 
-                catch (Exception Excp)
-                {
-                    MessageBox.Show("Error: " + Excp.Message);
-                    textbox_status.Text = "File3 Parsing Failed";
+                    try
+                    {
+                        StreamReader psr1 = new StreamReader(textbox_file1.Text + ".parse");
+                        StreamWriter psw1 = new StreamWriter(textbox_file1.Text + ".mdcdnum");
+
+                        while ((parse_file1_data = psr1.ReadLine()) != null)
+                        {
+                            if (parse_file1_data.StartsWith(selecteditem, StringComparison.InvariantCultureIgnoreCase))
+                            {
+                                parse_file1_data = parse_file1_data.Remove(0, 7);
+                                parse_file1_data = parse_file1_data.Replace("~", "");
+                                psw1.WriteLine(parse_file1_data);
+                            }
+                        }
+
+                        psw1.Close();
+                        textbox_extractor_status.Text = "File1 Medicaid ID extraction Completed Successfully";
+                    }
+
+                    catch (Exception Excp)
+                    {
+                        MessageBox.Show("Error: " + Excp.Message);
+                        textbox_parser_status.Text = "File1 Medicaid ID Extraction Failed";
+                    }
+
+                    if (textbox_file2.Text != "")
+                    {
+                        string parse_file2_data;
+                        parse_file2_data = "";
+
+                        try
+                        {
+                            StreamReader psr2 = new StreamReader(textbox_file2.Text + ".parse");
+                            StreamWriter psw2 = new StreamWriter(textbox_file2.Text + ".mdcdnum");
+
+                            while ((parse_file2_data = psr2.ReadLine()) != null)
+                            {
+                                if (parse_file2_data.StartsWith(selecteditem, StringComparison.InvariantCultureIgnoreCase))
+                                {
+                                    parse_file2_data = parse_file2_data.Remove(0, 7);
+                                    parse_file2_data = parse_file2_data.Replace("~", "");
+                                    psw2.WriteLine(parse_file2_data);
+                                }
+                            }
+
+                            psw2.Close();
+                            textbox_extractor_status.Text = "File2 Medicaid ID extraction Completed Successfully";
+                        }
+
+                        catch (Exception Excp)
+                        {
+                            MessageBox.Show("Error: " + Excp.Message);
+                            textbox_parser_status.Text = "File2 Medicaid ID Extraction Failed";
+                        }
+                    }
+
+                    if (textbox_file3.Text != "")
+                    {
+                        string parse_file3_data;
+                        parse_file3_data = "";
+
+                        try
+                        {
+                            StreamReader psr3 = new StreamReader(textbox_file3.Text + ".parse");
+                            StreamWriter psw3 = new StreamWriter(textbox_file3.Text + ".mdcdnum");
+
+                            while ((parse_file3_data = psr3.ReadLine()) != null)
+                            {
+                                if (parse_file3_data.StartsWith(selecteditem, StringComparison.InvariantCultureIgnoreCase))
+                                {
+                                    parse_file3_data = parse_file3_data.Remove(0, 7);
+                                    parse_file3_data = parse_file3_data.Replace("~", "");
+                                    psw3.WriteLine(parse_file3_data);
+                                }
+                            }
+
+                            psw3.Close();
+                            textbox_extractor_status.Text = "File3 Medicaid ID extraction Completed Successfully";
+                        }
+
+                        catch (Exception Excp)
+                        {
+                            MessageBox.Show("Error: " + Excp.Message);
+                            textbox_parser_status.Text = "File3 Medicaid ID Extraction Failed";
+                        }
+                    }
                 }
             }
         }
@@ -245,6 +320,11 @@ namespace FileParser
         }
 
         private void textbox_status_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void form_fileparser_Load(object sender, EventArgs e)
         {
 
         }

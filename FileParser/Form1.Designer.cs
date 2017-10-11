@@ -43,9 +43,9 @@
             this.button_file3_browse = new System.Windows.Forms.Button();
             this.label_file3 = new System.Windows.Forms.Label();
             this.label_status = new System.Windows.Forms.Label();
-            this.textbox_status = new System.Windows.Forms.TextBox();
+            this.textbox_parser_status = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textbox_extractor_status = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label_file1
@@ -202,15 +202,15 @@
             this.label_status.TabIndex = 15;
             this.label_status.Text = "Parser Status:";
             // 
-            // textbox_status
+            // textbox_parser_status
             // 
-            this.textbox_status.Enabled = false;
-            this.textbox_status.Location = new System.Drawing.Point(199, 374);
-            this.textbox_status.Name = "textbox_status";
-            this.textbox_status.Size = new System.Drawing.Size(308, 26);
-            this.textbox_status.TabIndex = 16;
-            this.textbox_status.Text = "Utility Initialized";
-            this.textbox_status.TextChanged += new System.EventHandler(this.textbox_status_TextChanged);
+            this.textbox_parser_status.Enabled = false;
+            this.textbox_parser_status.Location = new System.Drawing.Point(199, 374);
+            this.textbox_parser_status.Name = "textbox_parser_status";
+            this.textbox_parser_status.Size = new System.Drawing.Size(308, 26);
+            this.textbox_parser_status.TabIndex = 16;
+            this.textbox_parser_status.Text = "Utility Initialized";
+            this.textbox_parser_status.TextChanged += new System.EventHandler(this.textbox_status_TextChanged);
             // 
             // label1
             // 
@@ -222,23 +222,23 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Extractor Status:";
             // 
-            // textBox1
+            // textbox_extractor_status
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(199, 423);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 26);
-            this.textBox1.TabIndex = 18;
-            this.textBox1.Text = "Utility Initialized";
+            this.textbox_extractor_status.Enabled = false;
+            this.textbox_extractor_status.Location = new System.Drawing.Point(199, 423);
+            this.textbox_extractor_status.Name = "textbox_extractor_status";
+            this.textbox_extractor_status.Size = new System.Drawing.Size(308, 26);
+            this.textbox_extractor_status.TabIndex = 18;
+            this.textbox_extractor_status.Text = "Utility Initialized";
             // 
             // form_fileparser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 470);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textbox_extractor_status);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textbox_status);
+            this.Controls.Add(this.textbox_parser_status);
             this.Controls.Add(this.label_status);
             this.Controls.Add(this.textbox_file3);
             this.Controls.Add(this.button_file3_browse);
@@ -257,6 +257,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "form_fileparser";
             this.Text = "Utility";
+            this.Load += new System.EventHandler(this.form_fileparser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,9 +280,9 @@
         private System.Windows.Forms.Button button_file3_browse;
         private System.Windows.Forms.Label label_file3;
         private System.Windows.Forms.Label label_status;
-        private System.Windows.Forms.TextBox textbox_status;
+        private System.Windows.Forms.TextBox textbox_parser_status;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textbox_extractor_status;
     }
 }
 
