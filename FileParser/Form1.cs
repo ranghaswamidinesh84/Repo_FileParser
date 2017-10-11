@@ -212,12 +212,21 @@ namespace FileParser
         private void button_extract_Click(object sender, EventArgs e)
         {
             string selecteditem = combobox_medicaid_id_selector.GetItemText(combobox_medicaid_id_selector.SelectedItem);
+            String parser_status;
+            parser_status = "";
 
+            if (textbox_parser_status.Text.Contains("Initialized") || 
+                textbox_parser_status.Text.Contains("Failed"))
+
+            {
+                MessageBox.Show("Parsing not Completed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                parser_status = "Incomplete";
+            }
             if (selecteditem == "")
             {
                 MessageBox.Show("Medicaid ID Segment Not selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if (parser_status != "Incomplete")
             {
                 if (textbox_file1.Text != "")
                 {
