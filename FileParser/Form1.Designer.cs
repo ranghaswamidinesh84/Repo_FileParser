@@ -42,10 +42,7 @@
             this.textbox_file3 = new System.Windows.Forms.TextBox();
             this.button_file3_browse = new System.Windows.Forms.Button();
             this.label_file3 = new System.Windows.Forms.Label();
-            this.label_status = new System.Windows.Forms.Label();
-            this.textbox_parser_status = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textbox_extractor_status = new System.Windows.Forms.TextBox();
+            this.richtextbox_status = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label_file1
@@ -57,12 +54,11 @@
             this.label_file1.Size = new System.Drawing.Size(139, 25);
             this.label_file1.TabIndex = 0;
             this.label_file1.Text = "Select  File1:";
-            this.label_file1.Click += new System.EventHandler(this.label_file1_Click);
             // 
             // button_file1_browse
             // 
             this.button_file1_browse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_file1_browse.Location = new System.Drawing.Point(389, 33);
+            this.button_file1_browse.Location = new System.Drawing.Point(438, 33);
             this.button_file1_browse.Name = "button_file1_browse";
             this.button_file1_browse.Size = new System.Drawing.Size(118, 45);
             this.button_file1_browse.TabIndex = 1;
@@ -75,7 +71,7 @@
             this.textbox_file1.Enabled = false;
             this.textbox_file1.Location = new System.Drawing.Point(185, 44);
             this.textbox_file1.Name = "textbox_file1";
-            this.textbox_file1.Size = new System.Drawing.Size(176, 26);
+            this.textbox_file1.Size = new System.Drawing.Size(232, 26);
             this.textbox_file1.TabIndex = 2;
             // 
             // button_parse
@@ -92,7 +88,7 @@
             // button_extract
             // 
             this.button_extract.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_extract.Location = new System.Drawing.Point(199, 289);
+            this.button_extract.Location = new System.Drawing.Point(225, 289);
             this.button_extract.Name = "button_extract";
             this.button_extract.Size = new System.Drawing.Size(133, 45);
             this.button_extract.TabIndex = 4;
@@ -103,7 +99,7 @@
             // button_quit
             // 
             this.button_quit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_quit.Location = new System.Drawing.Point(374, 289);
+            this.button_quit.Location = new System.Drawing.Point(421, 289);
             this.button_quit.Name = "button_quit";
             this.button_quit.Size = new System.Drawing.Size(133, 45);
             this.button_quit.TabIndex = 5;
@@ -128,24 +124,23 @@
             "REF*0F*",
             "REF{0F{",
             "REF*ABB*"});
-            this.combobox_medicaid_id_selector.Location = new System.Drawing.Point(264, 224);
+            this.combobox_medicaid_id_selector.Location = new System.Drawing.Point(311, 224);
             this.combobox_medicaid_id_selector.Name = "combobox_medicaid_id_selector";
             this.combobox_medicaid_id_selector.Size = new System.Drawing.Size(243, 28);
             this.combobox_medicaid_id_selector.TabIndex = 8;
-            this.combobox_medicaid_id_selector.SelectedIndexChanged += new System.EventHandler(this.combobox_medicaid_id_selector_SelectedIndexChanged);
             // 
             // textbox_file2
             // 
             this.textbox_file2.Enabled = false;
             this.textbox_file2.Location = new System.Drawing.Point(185, 107);
             this.textbox_file2.Name = "textbox_file2";
-            this.textbox_file2.Size = new System.Drawing.Size(176, 26);
+            this.textbox_file2.Size = new System.Drawing.Size(232, 26);
             this.textbox_file2.TabIndex = 11;
             // 
             // button_file2_browse
             // 
             this.button_file2_browse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_file2_browse.Location = new System.Drawing.Point(389, 96);
+            this.button_file2_browse.Location = new System.Drawing.Point(436, 96);
             this.button_file2_browse.Name = "button_file2_browse";
             this.button_file2_browse.Size = new System.Drawing.Size(118, 45);
             this.button_file2_browse.TabIndex = 10;
@@ -168,13 +163,13 @@
             this.textbox_file3.Enabled = false;
             this.textbox_file3.Location = new System.Drawing.Point(185, 170);
             this.textbox_file3.Name = "textbox_file3";
-            this.textbox_file3.Size = new System.Drawing.Size(176, 26);
+            this.textbox_file3.Size = new System.Drawing.Size(232, 26);
             this.textbox_file3.TabIndex = 14;
             // 
             // button_file3_browse
             // 
             this.button_file3_browse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_file3_browse.Location = new System.Drawing.Point(389, 159);
+            this.button_file3_browse.Location = new System.Drawing.Point(436, 159);
             this.button_file3_browse.Name = "button_file3_browse";
             this.button_file3_browse.Size = new System.Drawing.Size(118, 45);
             this.button_file3_browse.TabIndex = 13;
@@ -192,54 +187,21 @@
             this.label_file3.TabIndex = 12;
             this.label_file3.Text = "Select  File3:";
             // 
-            // label_status
+            // richtextbox_status
             // 
-            this.label_status.AutoSize = true;
-            this.label_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_status.Location = new System.Drawing.Point(19, 373);
-            this.label_status.Name = "label_status";
-            this.label_status.Size = new System.Drawing.Size(150, 25);
-            this.label_status.TabIndex = 15;
-            this.label_status.Text = "Parser Status:";
-            // 
-            // textbox_parser_status
-            // 
-            this.textbox_parser_status.Enabled = false;
-            this.textbox_parser_status.Location = new System.Drawing.Point(199, 374);
-            this.textbox_parser_status.Name = "textbox_parser_status";
-            this.textbox_parser_status.Size = new System.Drawing.Size(308, 26);
-            this.textbox_parser_status.TabIndex = 16;
-            this.textbox_parser_status.Text = "Utility Initialized";
-            this.textbox_parser_status.TextChanged += new System.EventHandler(this.textbox_status_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 424);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 25);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Extractor Status:";
-            // 
-            // textbox_extractor_status
-            // 
-            this.textbox_extractor_status.Enabled = false;
-            this.textbox_extractor_status.Location = new System.Drawing.Point(199, 423);
-            this.textbox_extractor_status.Name = "textbox_extractor_status";
-            this.textbox_extractor_status.Size = new System.Drawing.Size(308, 26);
-            this.textbox_extractor_status.TabIndex = 18;
-            this.textbox_extractor_status.Text = "Utility Initialized";
+            this.richtextbox_status.Location = new System.Drawing.Point(24, 362);
+            this.richtextbox_status.Name = "richtextbox_status";
+            this.richtextbox_status.ReadOnly = true;
+            this.richtextbox_status.Size = new System.Drawing.Size(530, 96);
+            this.richtextbox_status.TabIndex = 19;
+            this.richtextbox_status.Text = "";
             // 
             // form_fileparser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 470);
-            this.Controls.Add(this.textbox_extractor_status);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textbox_parser_status);
-            this.Controls.Add(this.label_status);
+            this.ClientSize = new System.Drawing.Size(575, 470);
+            this.Controls.Add(this.richtextbox_status);
             this.Controls.Add(this.textbox_file3);
             this.Controls.Add(this.button_file3_browse);
             this.Controls.Add(this.label_file3);
@@ -256,7 +218,7 @@
             this.Controls.Add(this.label_file1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "form_fileparser";
-            this.Text = "Utility";
+            this.Text = "Medicaid ID Extractor";
             this.Load += new System.EventHandler(this.form_fileparser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -279,10 +241,7 @@
         private System.Windows.Forms.TextBox textbox_file3;
         private System.Windows.Forms.Button button_file3_browse;
         private System.Windows.Forms.Label label_file3;
-        private System.Windows.Forms.Label label_status;
-        private System.Windows.Forms.TextBox textbox_parser_status;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textbox_extractor_status;
+        private System.Windows.Forms.RichTextBox richtextbox_status;
     }
 }
 
